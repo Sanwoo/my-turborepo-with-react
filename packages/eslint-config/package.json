@@ -1,0 +1,23 @@
+{
+  "name": "@workspace/eslint-config",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "clean": "rm -rf .turbo dist node_modules"
+  },
+  "exports": {
+    "./base": "./base.js",
+    "./react": "./react.js"
+  },
+  "devDependencies": {
+    "@eslint/js": "catalog:",
+    "eslint-config-prettier": "catalog:",
+    "eslint-plugin-only-warn": "catalog:",
+    "eslint-plugin-react-hooks": "catalog:",
+    "eslint-plugin-react-refresh": "catalog:",
+    "eslint-plugin-turbo": "catalog:",
+    "globals": "catalog:",
+    "typescript-eslint": "catalog:"
+  }
+}

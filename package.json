@@ -1,0 +1,84 @@
+{
+  "name": "my-turborepo-with-tailwindcssv4",
+  "version": "0.0.1",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "dev:react-template": "turbo dev --filter=react-template",
+    "lint": "turbo lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,md}\"",
+    "check-types": "turbo run check-types",
+    "clean": "turbo run clean",
+    "deep-clean": "turbo clean && turbo run clean",
+    "prepare": "husky install",
+    "devtools": "turbo devtools",
+    "gen:app": "turbo gen react-app"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "catalog:",
+    "@commitlint/config-conventional": "catalog:",
+    "@workspace/eslint-config": "workspace:*",
+    "@workspace/typescript-config": "workspace:*",
+    "eslint": "catalog:",
+    "husky": "catalog:",
+    "lint-staged": "catalog:",
+    "prettier": "catalog:",
+    "prettier-plugin-tailwindcss": "catalog:",
+    "turbo": "catalog:",
+    "typescript": "catalog:",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "tailwindcss": "catalog:"
+  },
+  "packageManager": "pnpm@10.33.2",
+  "engines": {
+    "node": ">=24"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "**/*.{css,scss,md,json}": [
+      "prettier --write"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
+    "rules": {
+      "type-enum": [
+        2,
+        "always",
+        [
+          "feat",
+          "fix",
+          "chore",
+          "docs",
+          "style",
+          "refactor",
+          "perf",
+          "test"
+        ]
+      ],
+      "scope-empty": [
+        0
+      ],
+      "subject-case": [
+        2,
+        "always",
+        "lower-case"
+      ],
+      "header-max-length": [
+        2,
+        "always",
+        100
+      ]
+    }
+  }
+}
