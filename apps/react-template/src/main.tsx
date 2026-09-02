@@ -4,7 +4,7 @@ import { createRoot } from 'react-dom/client'
 import '@workspace/ui/globals.css'
 import '@/styles/globals.css'
 
-import { AppRouter } from '@/router'
+import { AppRouter } from '@/app/router'
 
 const rootElement = document.getElementById('root')
 

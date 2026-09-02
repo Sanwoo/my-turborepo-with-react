@@ -58,7 +58,7 @@ pnpm gen:app                # 从模板创建新应用
 
 应用入口位于 `apps/react-template/src/main.tsx`。入口使用 `createRoot` 与 `StrictMode`，并挂载 `AppRouter`。
 
-路由集中定义在 `src/router.tsx`：
+路由集中定义在 `src/app/router.tsx`：
 
 - `/` 渲染首页。
 - `*` 渲染 404 页面。
