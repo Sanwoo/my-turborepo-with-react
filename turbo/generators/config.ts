@@ -19,7 +19,7 @@ const templateName = 'react-template'
 const firstGeneratedPort = 5174
 const ignoredDirectories = new Set(['node_modules', '.turbo', 'dist'])
 
-function findAvailablePort(appsDir: string): number {
+const findAvailablePort = (appsDir: string): number => {
   const usedPorts = new Set<number>()
 
   for (const entry of fs.readdirSync(appsDir, { withFileTypes: true })) {
@@ -43,7 +43,7 @@ function findAvailablePort(appsDir: string): number {
   return port
 }
 
-export default function generator(plop: TurboPlop): void {
+const generator = (plop: TurboPlop): void => {
   const getRootPath = () => plop.turbo?.paths?.root || process.cwd()
   const getAppsDir = () => path.join(getRootPath(), 'apps')
 
@@ -134,3 +134,5 @@ export default function generator(plop: TurboPlop): void {
     ],
   })
 }
+
+export default generator

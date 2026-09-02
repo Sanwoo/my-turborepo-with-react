@@ -1,6 +1,6 @@
 import { Button } from '@workspace/ui/components/button'
 
-export function HomePage() {
+export const HomePage = () => {
   return (
     <div className="flex min-h-svh items-center justify-center">
       <div className="flex flex-col items-center justify-center gap-4">
